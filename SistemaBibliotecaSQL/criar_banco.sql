@@ -16,13 +16,13 @@ create table usuarios(
 );
 
 
-create table emprestimos (
-	id int primary key auto_increment,
-	usuario_id int not null,
-	livro_id int not null,
-	data_emprestimo date,
-	
-	foreign key (usuario_id) references usuarios(id),
-	foreign key (livro_id) references livros(id)
-)
+CREATE TABLE emprestimos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT NOT NULL,
+    livro_id INT NOT NULL,
+    data_emprestimo DATE NOT NULL,
+    data_devolucao DATE,
 
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    FOREIGN KEY (livro_id) REFERENCES livros(id)
+);
